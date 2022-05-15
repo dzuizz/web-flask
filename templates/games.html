@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-154885375-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag(){dataLayer.push(arguments);}
+		gtag('js', new Date());
+		
+		gtag('config', 'UA-154885375-1');
+	</script>
+
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+	<script src="https://kit.fontawesome.com/a076d05399.js"></script>
+	<script src="https://cdn.tailwindcss.com"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link rel="stylesheet" href="rps.css">
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Games</title>
+</head>
+
+<body class="m-h-[100vh] font-mono flex flex-wrap justify-self-center items-center bg-gradient-to-r from-slate-600 to-zinc-400">
+	<nav class="left-menu">
+		<div class="py-[30px] px-[10px] w-[200px] text-center text-white font-[20px] logo"><i class="font-[100px] text-[#21CCFC] fa fa-align-justify"></i>
+			<div>Games' Section</div>
+		</div>
+		<div class="text-white w-full accordion">
+			<div class="section">
+				<input type="radio" name="accordion-1" id="section-1" checked="checked"/>
+				<label for="section-1"><span>Home</span></label>
+				<div class="content">
+					<ul class="w-full p-0 m-0 list-none">
+						<li class="p-[10px] hover:cursor-pointer"><i class="w-[15px] mr-[15px] text-[13px] fa fa-home"></i><a href="index.html">Main Page</a></li>
+						<li class="p-[10px] hover:cursor-pointer"><i class="w-[15px] mr-[15px] text-[13px] fa fa-user"></i><a href="family.html">My Family</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="section">
+				<input type="radio" name="accordion-1" id="section-2" value="toggle"/>
+				<label for="section-2"><span>Available Games</span></label>
+				<div class="content">
+					<ul class="w-full p-0 m-0 list-none">
+						<li class="p-[10px] hover:cursor-pointer"><i class="w-[15px] mr-[15px] text-[13px] fa fa-hand-scissors"></i><span>Rock Paper Scissors</span></li>
+						<li class="p-[10px] hover:cursor-pointer"><i class="w-[15px] mr-[15px] text-[13px] fa fa-align-center"></i><span>Tic Tac Toe</span></li>
+						<li class="p-[10px] hover:cursor-pointer"><i class="w-[15px] mr-[15px] text-[13px] fa fa-sitemap"></i><span>Visitation</span></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+
+	<main class="w-full mt-32">
+
+		<div class="mx-auto text-center">
+			<h1 class="text-3xl">Rock Paper Scissors</h1>
+			<button type="button" onclick="round()" class="m-4 p-2 bg-sky-500 rounded" id="round-start">Start a round</button>
+			<div>
+				<div class="p-4 bg-amber-500 rounded inline-block choice">
+					<p class="font-bold" id="computer-score">0</p>
+					<strong>Computer's choice:</strong>
+					<div id="computer-choice"></div>
+				</div>
+				<div class="p-4 bg-sky-500   rounded inline-block choice">
+					<p class="font-bold" id="user-score">0</p>
+					<strong>Your choice:</strong>
+					<div id="user-choice"></div>
+				</div>
+				<div id="result"></div>
+			</div>
+		</div>
+	</main>
+    <script src="rockpaperscissors.js"></script>
+</body>
+</html>

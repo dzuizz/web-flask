@@ -1,0 +1,71 @@
+/******************************************
+*  Author : Ahmad Dzuizz Annajib   
+*  Created On : Sun Dec 12 2021
+*  File : styles.css
+*******************************************/
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+@import url("//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  * @apply m-0 p-0 box-border no-underline font-mono;
+  .wrapper @apply fixed w-full bg-color-[#171c24];
+  .wrapper nav @apply my-0 mx-auto align-center justify-between relative flex m-w-calc(100% - 200px) h-[70px];
+  nav .content @apply flex align-center;
+  nav .content .links @apply ml-20 flex;
+  .content .logo a @apply text-white font-semibold text-3xl ;
+  .content .links li @apply list-none leading-[70px];
+  .content .links li a, .content .links li label @apply transition-all duration-300 ease-linear text-white font-medium text-lg rounded-[5px] py-[9px] px-[17px];
+  .content .links li label @apply hidden;
+  .content .links li a:hover, .content .links li label:hover @apply bg-color-[#323c4e];
+  .wrapper .search-icon, .wrapper .menu-icon @apply text-white text-lg cursor-pointer w-[70px] leading-[70px];
+  .wrapper .menu-icon @apply hidden;
+  .wrapper #show-search:checked ~ .search-icon i::before @apply content-['/f00d'];
+  .wrapper .search-box @apply transition-all duration-300 ease-linear absolute h-full m-w-calc(100% - 50px) w-full opacity-0 pointer-events-none;
+  .wrapper #show-search:checked ~ .search-box @apply opacity-100 pointer-events-auto;
+  .search-box input @apply text-white w-full h-full border-none text-[17px] bg-color-[#171c24] mr-[100px] ml-[15px];
+  .search-box input::placeholder @apply text-color-[#f2f2f2];
+  .search-box .go-icon @apply absolute right-2.5 left-2/4 w-16 bg-gray-900 text-white text-xl cursor-pointer hidden outline-0 leading-[60px] translate-y-[-50%];
+  .wrapper input[type="checkbox"] @apply hidden;
+
+  .content .links ul @apply invisible absolute opacity-0 bg-color-[#171c24] top-20 z-[-1];
+  .content .links li:hover > ul @apply transition-all duration-300 ease-linear visible opacity-100 top-[70px];
+  .content .links ul li a @apply rounded-none !important block w-full leading-[30px];
+  .content .links ul ul @apply absolute top-0 right-calc(8px - 100%);
+  .content .links ul li @apply relative;
+  .content .links ul li:hover ul @apply top-0;
+
+  @media screen and (max-width: 1250px){
+    .wrapper nav @apply m-w-full px-5;
+    nav .content .links @apply ml-[30px];
+    .content .links li a @apply py-2 px-[13px];
+    .wrapper .search-box @apply m-w-calc(100% - 100px);
+    .wrapper .search-box input @apply pr-[100px] pl-[15px];
+  }
+
+  @media screen and (max-width: 900px){
+    .wrapper .menu-icon @apply block;
+    .wrapper #show-menu:checked ~ .menu-icon i::before @apply content-['\f0c9'];
+    nav .content .links @apply transition-all duration-300 ease-linear block fixed h-full w-full overflow-y-auto pb-[100px] m-w-[350px] top-[70px] left-[-100%] bg-color-[#14181f];
+    nav #show-menu:checked ~ .content .links @apply left-0;
+    .content .links li @apply mx-5 my-[15px];
+    .content .links li a, .content .links li label @apply block text-xl cursor-pointer leading-10 py-2 px-[18px];
+    .content .links li a.desktop-link @apply hidden;
+
+    .content .links ul, .content .links ul ul @apply visible absolute bg-none opacity-10 overflow-hidden m-h-0;
+    .content .links #show-features:checked ~ ul, .content .links #show-services:checked ~ ul,.content .links #show-items:checked ~ ul @apply m-h-[100vh];
+    .content .links ul li @apply mx-5 my-[7px];
+    .content .links ul li a @apply rounded-[5px] !important text-lg leading-[30px];
+  }
+
+  @media screen and (max-width: 400px){
+    .wrapper nav @apply px-2.5;
+    .content .logo a @apply text-[27px];
+    .wrapper .search-box @apply m-w-calc(100% - 70px);
+    .wrapper .search-box .go-icon @apply r-0 w-[30px];
+    .wrapper .search-box input @apply pr-[30px];
+  }
+}
