@@ -1,6 +1,7 @@
 from re import S
 from flask import Flask, render_template, url_for
-from flask_sqlalchemy import SQLAlchemy
+#from flask_sqlalchemy import SQLAlchemy
+#Azure App Service doesn't support Flask_SQLAlchemy
 
 app = Flask(__name__)
 
