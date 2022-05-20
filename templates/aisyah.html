@@ -1,0 +1,20 @@
+{% extends 'family_template.html' %}
+
+{% block content %}
+{{ super() }}
+
+<main>
+    <div class="flex flex-nonwrap">
+        <div class="m-2 mt-4"><img src="{{ url_for('static', filename='aisyah.jpg') }}"></div>
+        <article class="font-comfortaa place-self-center">
+            <h1 class="text-7xl">Aisyah Atqona Amalia</h1>
+            <p class="mt-2">
+                Hello! I am Aisyah Atqona Amalia.<br>
+                I am the third child of my family and the only daughter of my family.<br>
+                I am currently <b class="text-amber-400">Grade 1</b> in <a href="https://irsyad.sg/"><b class="text-sky-500">Madrasah Irsyad Zuhri Al-Islamiah</b></a>.<br>
+                I love playing and helping my mother cook.
+            </p>
+        </article>
+    </div>
+</main>
+{% endblock %}

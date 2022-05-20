@@ -1,0 +1,18 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+{{ super() }}
+
+<main class="h-screen">
+    <div class="flex flex-wrap">
+        {% for algorithm in learnt_algorithms %}
+            <button class="m-2 family-link {{ loop.cycle('border-green-500 hover:bg-green-500', 'border-sky-500 hover:bg-sky-500', 'border-amber-500 hover:bg-amber-500', 'border-red-400 hover:bg-red-400') }}" type="button" name="{{ algorithm.name }}"><a href="#{{ algorithm.id }}" class="mx-1">{{ algorithm.name }}</a></button>
+        {% endfor %}
+    </div>
+    <div>
+        {% for algorithm in learnt_algorithms %}
+
+        {% endfor %}
+    </div>
+</main>
+{% endblock %}

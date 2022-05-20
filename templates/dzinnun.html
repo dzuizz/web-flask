@@ -1,0 +1,20 @@
+{% extends 'family_template.html' %}
+
+{% block content %}
+{{ super() }}
+
+<main>
+    <div class="flex flex-nonwrap">
+        <div class="m-2 mt-4"><img src="{{ url_for('static', filename='dzinnun.jpg') }}"></div>
+        <article class="font-comfortaa place-self-center">
+            <h1 class="text-7xl">Ahmad Dzinnun</h1>
+            <p class="mt-2">
+                Hello! I am Ahmad Dzinnun.<br>
+                I am the second child of my family and the second son of the family.<br>
+                I am currently Grade 4 in <a href="https://irsyad.sg/"><b class="text-sky-500">Madrasah Irsyad Zuhri Al-Islamiah</b></a>.<br>
+                I love saying SIUUU!
+            </p>
+        </article>
+    </div>
+</main>
+{% endblock %}

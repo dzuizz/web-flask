@@ -1,16 +1,15 @@
-<!DOCTYPE HTML>
-<html lang="en-US">
 {% extends "family_template.html" %}
 
+{% block content %}
+{{ super() }}
 
-<body class="font-mono bg-gradient-to-tr from-[#FFFFFF] to-[#E5E5E5]">
-    <main class="">
-        <div class="flex flex-nonwrap">
-            <div class="m-2 mt-4"><img src="static/familyImage.jpg"></div>
-            <p class="place-self-center">
-                <b class="text-7xl">My Family</b><br>The family with all types of personalities and behaviours.
-            </p>
-        </div>
-    </main>
-
-</body>
+<main>
+    <div class="flex flex-nonwrap">
+        <div class="m-2 mt-4"><img src="static/familyImage.jpg"></div>
+        <article class="font-comfortaa place-self-center">
+            <h1 class="text-7xl">My Family</h1>
+            <p class="mt-2">The family with all types of personalities and behaviours.</p>
+        </article>
+    </div>
+</main>
+{% endblock %}

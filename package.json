@@ -1,0 +1,24 @@
+{
+  "name": "web-flask",
+  "version": "1.0.0",
+  "description": "",
+  "main": "tailwind.config.js",
+  "scripts": {
+    "dev": "npx tailwindcss -i tailwind.css -o static/css/styles.css --watch",
+    "prod": "npx tailwindcss -i tailwind.css -o static/css/styles.css --minify"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dzuizz/web-flask.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dzuizz/web-flask/issues"
+  },
+  "homepage": "https://github.com/dzuizz/web-flask#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.24"
+  }
+}
