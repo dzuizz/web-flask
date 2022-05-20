@@ -2,10 +2,10 @@
 
 {% block content %}
 {{ super() }}
-<main class="float-left mt-3 m-2 text-lg">
+<main class="float-left mt-3 m-2 text-base">
     <!-- Biography -->
     <div class = "float-left mr-4 max_sm:w-6/12"><img src="/static/dzuizz.jpg" alt="My Picture" width="320" class=""/></div>
-    <p class="flex-wrap break-words text-stone-900 text-lg">
+    <p class="flex-wrap break-words text-stone-900 text-base">
         My name is Ahmad Dzuizz Annajib.<br>
         I was born in Indonesia and have 2 brothers and a sister.<br>
         I currently study at <a class = "underline text-indigo-500 decoration-indigo-500" href = "https://irsyad.sg/">Madrasah Irsyad Zuhri Al-Islamiah</a>.<br>
@@ -16,7 +16,7 @@
     <br>
 
     <!--Github-->
-    <article class="flex-wrap break-words text-stone-900 text-lg">
+    <article class="flex-wrap break-words text-stone-900 text-base">
         <b class="text-2xl">My Coding Profiles:</b><br>
         <b class="">Github</b>     → <a class="underline underline-offset-1 decoration-sky-500" href="https://github.com/dzuizz">github.com/dzuizz</a><br>
         <b class="">Codeforces</b> → <a class="underline underline-offset-1 decoration-sky-500" href="https://codeforces.com/profile/dzuizz">codeforces.com/profile/dzuizz</a><br>
@@ -28,21 +28,21 @@
     <!-- Achievements -->
     <b class="my-2 text-3xl text-red-800">My Achievements</b>
     {% for achievement in achievements %}
-        <div class="break-words text-lg">
-            <h3 class="font-bold text-lg text-rose-600">{{ achievement.year }} - {{achievement.grade}}</h3>
+        <div class="break-words text-base">
+            <h3 class="font-bold text-base text-rose-600">{{ achievement.year }} - {{achievement.grade}}</h3>
             <ul class="list-disc mx-10">
                 {% for fulfilment in achievement.fulfilments %}
                     <li class="m-2 z-0">
-                        <p class="text-stone-900 text-lg">
+                        <p class="text-stone-900 text-base">
                             <b>{{ fulfilment.title }}</b>
                             ({{ contests[fulfilment.title] }}) - 
-                            {% if fulfilment.award == 'Platinum' or fulfilment.award == 'Perfect Score' %}
+                            {% if fulfilment.award == 'Platinum' or fulfilment.award == 'Perfect Score' or fulfilment.award == 'HIGH DISTINCTION' %}
                                 <b class = "text-violet-800">{{ fulfilment.award }}</b>
-                            {% elif fulfilment.award == 'GOLD' or fulfilment.award == 'HIGH DISTINCTION' %}
+                            {% elif fulfilment.award == 'GOLD' or fulfilment.award == 'DISTINCTION' %}
                                 <b class = "text-amber-400">{{ fulfilment.award }}</b>
-                            {% elif fulfilment.award == 'SILVER' or fulfilment.award == 'DISTINCTION' %}
+                            {% elif fulfilment.award == 'SILVER' or fulfilment.award == 'MERIT' %}
                                 <b class = "text-neutral-400">{{ fulfilment.award }}</b>
-                            {% elif fulfilment.award == 'BRONZE' or fulfilment.award == 'MERIT' %}
+                            {% elif fulfilment.award == 'BRONZE' %}
                                 <b class = "text-red-900">{{ fulfilment.award }}</b>
                             {% else %}
                                 <b>{{ fulfilment.award }}</b>

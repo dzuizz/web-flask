@@ -42,35 +42,35 @@
 
 <body class="font-mono flex flex-wrap w-full m-0 bg-primary">
     {% block content %}
-    <nav class="sticky top-0 flex items-center bg-gray-800 p-3 flex-wrap w-full">
-        <a href="/" class="p-2 mr-4 inline-flex items-center"> <!-- Logo -->
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current text-white h-8 w-8 mr-2">
-                <path d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"/>
-            </svg>
-            <span class="text-xl text-white font-bold uppercase tracking-wide">
-                Dzuizz.com
-            </span>
-        </a>
-        <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler" data-target = "#navigation">
-            <i class="material-icons">menu</i>
-        </button>
-        <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
-            <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
-                <a href="/" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span>Home</span>
-                </a>
-                <a href="/games" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span>Games</span>
-                </a>
-                <a href="/family" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span>My Family</span>
-                </a>
-                <a href="/algorithms" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
-                    <span>Algorithms</span>
-                </a>
+        <nav class="sticky top-0 flex items-center bg-gray-800 p-3 flex-wrap w-full">
+            <a href="/" class="p-2 mr-4 inline-flex items-center"> <!-- Logo -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current text-white h-8 w-8 mr-2">
+                    <path d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"/>
+                </svg>
+                <span class="text-xl text-white font-bold uppercase tracking-wide">
+                    Dzuizz.com
+                </span>
+            </a>
+            <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler" data-target = "#navigation">
+                <i class="material-icons">menu</i>
+            </button>
+            <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+                <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
+                    <a href="/" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>Home</span>
+                    </a>
+                    <a href="/games" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>Games</span>
+                    </a>
+                    <a href="/family" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>My Family</span>
+                    </a>
+                    <a href="/algorithms" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>Algorithms</span>
+                    </a>
+                </div>
             </div>
-        </div>
-    </nav>
+        </nav>
     {% endblock %}
 
     <!--Bootstrap JS & Popper-->
