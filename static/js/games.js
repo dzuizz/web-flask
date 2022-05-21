@@ -1,30 +1,38 @@
 // Rock Paper Scissors
 var randomGuess, userGuess, userScore = 0, computerScore = 0, scissors, paper, stone;
 
-choices = ["Rock", "Paper", "Scissors"];
+choices = {
+	"Rock": 1,
+	"Paper": 2,
+	"Scissors": 3,
+};
 
-function round(move) {
+function move(move) {
+	userGuess = move;
+	document.getElementById("rock").classList.remove("outline-4 scale-150");
+	document.getElementById("paper").classList.remove("outline-4 scale-150");
+	document.getElementById("scissors").classList.remove("outline-4 scale-150");
+	document.getElementById(move).classList.add("outline-4 scale-150");
+}
+
+function round() {
 	randomGuess = Math.floor(Math.random() * 3) + 1;
-	userGuess = prompt("To play this game, enter your choice: Scissors(1), Paper(2) or Stone(3).");
 
-	if (parseInt(userGuess) === randomGuess) {
-		document.getElementById("result").innerHTML = "<p><br>This is a draw.</p>";
-	} else if (parseInt(userGuess) === 1 && randomGuess === 2) {
-		document.getElementById("result").innerHTML = "<p><br>You have won, scissors will cut paper up.</p>";
-	} else if (parseInt(userGuess) === 2 && randomGuess === 1) {
-		document.getElementById("result").innerHTML = "<p><br>The computer has won, scissors will cut paper up.</p>";
-	} else if (parseInt(userGuess) === 2 && randomGuess === 3) {
-		document.getElementById("result").innerHTML = "<p><br>You have won, paper will wrap up stones.</p>";
-	} else if (parseInt(userGuess) === 3 && randomGuess === 2) {
-		document.getElementById("result").innerHTML = "<p><br>The computer has won, paper will wrap up stones.</p>";
-	} else if (parseInt(userGuess) === 3 && randomGuess === 1) {
-		document.getElementById("result").innerHTML = "<p><br>You have won, stones will break scissors.</p>";
-	} else if (parseInt(userGuess) === 1 && randomGuess === 3) {
-		document.getElementById("result").innerHTML = "<p><br>The computer has won, stones will break scissors.</p>";
+	if (userGuess === randomGuess) {
+		document.getElementById("result").innerHTML = "This is a draw.";
+	} else if (userGuess === "rock" && randomGuess === 2) {
+		document.getElementById("result").innerHTML = "You have won, scissors will cut paper up.";
+	} else if (userGuess === "paper" && randomGuess === 1) {
+		document.getElementById("result").innerHTML = "The computer has won, scissors will cut paper up.";
+	} else if (userGuess === "paper" && randomGuess === 3) {
+		document.getElementById("result").innerHTML = "You have won, paper will wrap up rocks.";
+	} else if (userGuess === "scissors" && randomGuess === 2) {
+		document.getElementById("result").innerHTML = "The computer has won, paper will wrap up rocks.";
+	} else if (userGuess === "scissors" && randomGuess === 1) {
+		document.getElementById("result").innerHTML = "You have won, rocks will break scissors.";
+	} else if (userGuess === "rock" && randomGuess === 3) {
+		document.getElementById("result").innerHTML = "The computer has won, rocks will break scissors.";
 	} else if (userGuess === "" && userGuess === null) {
-		document.getElementById("result").innerHTML = "<p><br>You have not entered your choice.</p>";
+		document.getElementById("result").innerHTML = "You have not entered your choice.";
 	}
-
-	document.getElementById("user-choice").innerHTML = choices[userGuess - 1];
-	document.getElementById("computer-choice").innerHTML = choices[randomGuess - 1];
 }

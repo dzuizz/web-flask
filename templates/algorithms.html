@@ -3,16 +3,271 @@
 {% block content %}
 {{ super() }}
 
-<main class="h-screen">
+<main class="fullscreen">
     <div class="flex flex-wrap">
         {% for algorithm in learnt_algorithms %}
             <button class="m-2 family-link {{ loop.cycle('border-green-500 hover:bg-green-500', 'border-sky-500 hover:bg-sky-500', 'border-amber-500 hover:bg-amber-500', 'border-red-400 hover:bg-red-400') }}" type="button" name="{{ algorithm.name }}"><a href="#{{ algorithm.id }}" class="mx-1">{{ algorithm.name }}</a></button>
         {% endfor %}
     </div>
-    <div>
-        {% for algorithm in learnt_algorithms %}
+    
+    <div class="list-none m-5 font-mono"> <!-- Binary Search -->
+        <h1 class="text-3xl font-medium uppercase" id="binary-search">Binary Search</h1>
+        <p class="text-base m-4">
+            Binary search is a search algorithm that finds the position of a target value within a sorted array.<br>
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
 
-        {% endfor %}
+    int main() {
+        int n, x; cin >> n >> x;
+        int a[n];
+        for(int i = 0; i < n; i++) {
+            cin >> a[i];
+        }
+
+        int lf = 0, rg = n-1;
+        while (lf < rg) {
+            int mid = (lf + rg) / 2;
+            if (a[mid] >= x) {
+                rg = mid;
+            } else {
+                lf = mid + 1;
+            }
+        }
+        cout << lf << endl; <span class="text-green-600">// or rg</span>
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- DFS -->
+        <h1 class="text-3xl font-medium uppercase" id="depth-first-search">Depth First Search</h1>
+        <p class="text-base m-4">
+            Depth First Search is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.<br>
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+        int rows, cols; cin >> rows >> cols;
+        int find, startY; cin >> startX >> starty;
+    }
+            </code>
+        </pre>
+
+    </div>
+    
+    <div class="list-none m-5 font-mono"> <!-- BFS -->
+        <h1 class="text-3xl font-medium uppercase" id="breadth-first-search">Breadth First Search</h1>
+        <p class="text-base m-4">
+            Breadth First Search
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    #include&#60;queue&#62;
+    using namespace std;
+
+    int main() {
+        int rows, cols; cin >> row >> cols;
+
+    }
+            </code>
+        </pre>
+    </div>
+    
+    <div class="list-none m-5 font-mono"> <!-- Dijkstra -->
+        <h1 class="text-3xl font-medium uppercase" id="Dijkstra">Dijkstra</h1>
+        <p class="text-base m-4">
+            Dijkstra
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    #include&#60;queue&#62;
+    using namespace std;
+
+    int main() {
+
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Floyd Warshall -->
+        <h1 class="text-3xl font-medium uppercase" id="floyd-warshall-algorithm">Floyd Warshall Algorithm</h1>
+        <p class="text-base m-4">
+            Floyd Warshall Algorithm
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+        
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Bellman Ford -->
+        <h1 class="text-3xl font-medium uppercase" id="bellman-ford-algorithm">Bellman Ford Algorithm</h1>
+        <p class="text-base m-4">
+            Bellman Ford Algorithm
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Dynamic Programming -->
+        <h1 class="text-3xl font-medium uppercase" id="dynamic-programming">Dynamic Programming</h1>
+        <p class="text-base m-4">
+            Dynamic Programming
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+        
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Segment Tree -->
+        <h1 class="text-3xl font-medium uppercase" id="segment-tree">Segment Tree</h1>
+        <p class="text-base m-4">
+            Segment Tree
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Minimum Spanning Tree -->
+        <h1 class="text-3xl font-medium uppercase" id="minimum-spanning-tree">Minimum Spanning Tree</h1>
+        <p class="text-base m-4">
+
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+        
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Disjoint Set Union -->
+        <h1 class="text-3xl font-medium uppercase" id="disjoint-set-union">Disjoint Set Union</h1>
+        <p class="text-base m-4">
+            Disjoint Set Union
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+            <p class="m-2 text-base">There are <b>n</b> kingdom. After every fight between two kingdom, the winner will take the defeated kingdom's resources<br>
+                                 In each fight, the kingdom with more resources will win.<br>
+                                 Given the number of kingdoms, their initial resources and the fights,<br>
+                                 Find the kingdom with the most resources at the end.<br>
+                                 Input:<br>
+                                 &#11;&#11;N M<br>
+                                 &#11;&#11;A<sub>N</sub> A<sub>N-1</sub> A<sub>N-2</sub> ... A<sub>1</sub>
+                                 &#11;&#11;
+            </p>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    #include&#60;vector&#62;
+    using namespace std;
+    typedef pair&#60;int, int&#62; ii;
+
+    #define fi first
+    #define se second
+
+    vector&#60;int&#62; dsu; <span class="text-green-600">// resources, the kingdom it is under</span>
+
+    int main() {
+        int n, m; cin >> n >> m;
+        dsu.resize(n);
+
+        for (int i = 0; i < n; i++) {
+            cin >> dsu[i].fi;
+            dsu[i].se = i;
+        }
+
+
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Insertion Sort -->
+        <h1 class="text-3xl font-medium uppercase" id="insertion-sort">Insertion Sort</h1>
+        <p class="text-base m-4">
+            Insertion Sort
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+
+    }
+            </code>
+        </pre>
+    </div>
+
+    <div class="list-none m-5 font-mono"> <!-- Bubble Sort -->
+        <h1 class="text-3xl font-medium uppercase" id="bubble-sort">Bubble Sort</h1>
+        <p class="text-base m-4"<pre class="syntax text-wrap z-[-1]">
+
+            <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+        </p>
+        <pre class="syntax text-wrap z-[-1]">
+            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
+    #include&#60;iostream&#62;
+    using namespace std;
+
+    int main() {
+        
+    }
+            </code>
+        </pre>
     </div>
 </main>
 {% endblock %}

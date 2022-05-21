@@ -48,17 +48,25 @@
 	</nav>
 	<main class="fullscreen ml-16 items-center justify-center">
 		<div class="mx-auto text-center mt-40 items-center font-comfortaa">
-			<h1 class="text-5xl font-medium" id="rock-paper-scissors">Rock Paper Scissors</h1>
+			<h1 class="text-5xl font-medium p-5" id="rock-paper-scissors">Rock Paper Scissors</h1>
+			<article class="text-base">
+				<p class="m-4">
+					Rock Paper Scissors is a game where you play against the computer.<br>
+					The computer will randomly choose a weapon and you will choose one of the below.<br>
+					The game is played with the following weapons:<br> Rock, Paper, Scissors
+				</p>
+				<p>Rocks break scissors, scissors cut paper, and paper covers rock.<br></p>
+			</article>
 			<button type="button" class="m-4 p-2 w-40 h-40 bg-green-500 justify-items-stretch rounded max-sm:w-30" id="rock" onclick="move('rock')"><i class="fa-solid fa-hand-back-fist fa-6x"></i></button>
 			<button type="button" class="m-4 p-2 w-40 h-40 bg-blue-500 justify-items-stretch rounded max-sm:w-30" id="paper" onclick="move('paper')"><i class="fa-solid fa-hand fa-6x"></i></button>
 			<button type="button" class="m-4 p-2 w-40 h-40 bg-red-500 justify-items-stretch rounded max-sm:w-30" id="scissors" onclick="move('scissors')"><i class="fa-solid fa-hand-scissors fa-6x"></i></button>
 			<div class="mt-2">
 				<button type="button" class="m-4 p-2 bg-amber-500 rounded" onclick="round()" id="round-start">Start Round</button>
 			</div>
-			<b class="font-comfortaa" id="result"></b>
+			<b class="font-comfortaa" id="result">Try It!</b>
 		</div>
 		<div class="mx-auto text-center mt-20 items-center font-comfortaa">
-			<h1 class="text-5xl font-medium" id="tic-tac-toe">Tic Tac Toe</h1>
+			<h1 class="text-5xl font-medium p-5" id="tic-tac-toe">Tic Tac Toe</h1>
 			<div class="m-2 inline-grid gap-2 grid-cols-3 grid-row-3 justify-between items-center">
 				<span class="w-20 h-20 text-center p-6 bg-sky-500 rounded">-</span>
 				<span class="w-20 h-20 text-center p-6 bg-sky-500 rounded">-</span>
