@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+
 /*
 ! tailwindcss v3.0.24 | MIT License | https://tailwindcss.com
 */
@@ -425,6 +427,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+.font-quantico   {
+  font-family: 'Quantico', sans-serif;
+}
+
+.font-comfortaa  {
+  font-family: 'Comfortaa', cursive;
+}
+
 *, ::before, ::after{
   --tw-translate-x: 0;
   --tw-translate-y: 0;
@@ -553,10 +563,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
-.font-comfortaa  {
-  font-family: 'Comfortaa', cursive;
-}
-
 .sidebar-tooltip{
   position: absolute;
   left: 3.5rem;
@@ -613,16 +619,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   left: 0px;
 }
 
+.z-\[-1\]{
+  z-index: -1;
+}
+
 .z-0{
   z-index: 0;
 }
 
 .z-10{
   z-index: 10;
-}
-
-.z-\[-1\]{
-  z-index: -1;
 }
 
 .float-left{
@@ -678,6 +684,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 0.5rem;
 }
 
+.ml-2{
+  margin-left: 0.5rem;
+}
+
+.mb-2{
+  margin-bottom: 0.5rem;
+}
+
 .ml-16{
   margin-left: 4rem;
 }
@@ -704,14 +718,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-auto{
   margin-left: auto;
-}
-
-.ml-2{
-  margin-left: 0.5rem;
-}
-
-.mb-2{
-  margin-bottom: 0.5rem;
 }
 
 .block{
@@ -778,12 +784,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   resize: both;
 }
 
-.list-disc{
-  list-style-type: disc;
-}
-
 .list-none{
   list-style-type: none;
+}
+
+.list-disc{
+  list-style-type: disc;
 }
 
 .grid-cols-3{
@@ -826,6 +832,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   place-self: center;
 }
 
+.whitespace-pre-wrap{
+  white-space: pre-wrap;
+}
+
 .break-words{
   overflow-wrap: break-word;
 }
@@ -860,11 +870,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .border-red-400{
   --tw-border-opacity: 1;
   border-color: rgb(248 113 113 / var(--tw-border-opacity));
-}
-
-.bg-gray-300{
-  --tw-bg-opacity: 1;
-  background-color: rgb(209 213 219 / var(--tw-bg-opacity));
 }
 
 .bg-sidebar-900{
@@ -910,10 +915,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 0px;
 }
 
-.p-3{
-  padding: 0.75rem;
-}
-
 .p-5{
   padding: 1.25rem;
 }
@@ -930,6 +931,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   padding: 1rem;
 }
 
+.p-3{
+  padding: 0.75rem;
+}
+
 .px-3{
   padding-left: 0.75rem;
   padding-right: 0.75rem;
@@ -938,6 +943,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .py-2{
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
+}
+
+.pl-8{
+  padding-left: 2rem;
 }
 
 .text-center{
@@ -1018,6 +1027,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
+.text-green-600{
+  --tw-text-opacity: 1;
+  color: rgb(22 163 74 / var(--tw-text-opacity));
+}
+
 .text-stone-900{
   --tw-text-opacity: 1;
   color: rgb(28 25 23 / var(--tw-text-opacity));
@@ -1088,9 +1102,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   color: rgb(156 163 175 / var(--tw-text-opacity));
 }
 
-.text-green-600{
+.text-yellow-700{
   --tw-text-opacity: 1;
-  color: rgb(22 163 74 / var(--tw-text-opacity));
+  color: rgb(161 98 7 / var(--tw-text-opacity));
+}
+
+.text-yellow-400{
+  --tw-text-opacity: 1;
+  color: rgb(250 204 21 / var(--tw-text-opacity));
 }
 
 .underline{
@@ -1131,10 +1150,6 @@ Ensure the default browser behavior of the `hidden` attribute.
 .outline-none{
   outline: 2px solid transparent;
   outline-offset: 2px;
-}
-
-.outline-amber-600{
-  outline-color: #d97706;
 }
 
 .duration-75{

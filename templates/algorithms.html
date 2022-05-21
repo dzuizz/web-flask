@@ -15,30 +15,36 @@
         <p class="text-base m-4">
             Binary search is a search algorithm that finds the position of a target value within a sorted array.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+            <p class="m-2 text-base">
+                Given a sorted array of size <b>N</b> and a target value <b>X</b>, find the location of <b>X</b> in the array.<br>
+                Input:<br>
+                &#11;&#11;N X<br>
+                &#11;&#11;A<sub>1</sub> A<sub>2</sub> ... A<sub>N</sub><br>
+            </p>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    using namespace std;
+#include&#60;iostream&#62;
+using namespace std;
 
-    int main() {
-        int n, x; cin >> n >> x;
-        int a[n];
-        for(int i = 0; i < n; i++) {
-            cin >> a[i];
-        }
-
-        int lf = 0, rg = n-1;
-        while (lf < rg) {
-            int mid = (lf + rg) / 2;
-            if (a[mid] >= x) {
-                rg = mid;
-            } else {
-                lf = mid + 1;
-            }
-        }
-        cout << lf << endl; <span class="text-green-600">// or rg</span>
+int main() {
+    int n, x; cin >> n >> x;
+    int a[n];
+    for(int i = 0; i < n; i++) {
+        cin >> a[i];
     }
+
+    int lf = 0, rg = n-1;
+    while (lf < rg) {
+        int mid = (lf + rg) / 2;
+        if (a[mid] >= x) {
+            rg = mid;
+        } else {
+            lf = mid + 1;
+        }
+    }
+    cout << lf << endl; <span class="text-green-600">// or rg</span>
+}
             </code>
         </pre>
     </div>
@@ -48,19 +54,63 @@
         <p class="text-base m-4">
             Depth First Search is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+            <p class="text-base m-4">
+                Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.<br>
+                Input:<br>
+                &#11;&#11;N M<br>
+                &#11;&#11;A B<br>
+                <br>
+                &#11;&#11;P<sub>1</sub> Q<sub>1</sub><br>
+                &#11;&#11;P<sub>2</sub> Q<sub>2</sub><br>
+                &#11;&#11;...<br>
+                &#11;&#11;P<sub>M</sub> Q<sub>M</sub><br>
+            </p>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    using namespace std;
+#include&#60;iostream&#62;
+#include&#60;vector&#62;
+using namespace std;
 
-    int main() {
-        int rows, cols; cin >> rows >> cols;
-        int find, startY; cin >> startX >> starty;
+vector&#60;vector&#60;int&#62; &#62; adj;
+bool visited[n];
+const int INF = 1e9;
+int S, E;
+
+int dfs(int cur) {
+    visited[cur] = true;
+    if (cur == E) {
+        return 0;
     }
+    int res = INF;
+    for (int i = 0; i < adj[cur].size(); i++) {
+        int next = adj[cur][i];
+        if (!visited[next]) {
+            int dis = dfs(next);
+            if (dis != -1) {
+                res = min(res, dis + 1);
+            }
+        }
+    }
+    if (res == INF) return -1;
+    return res;
+}
+
+int main() {
+    int n, m; cin >> n >> m;
+    visited = vector&#60;int&#62;(n);
+
+    for (int i = 0; i < m; i++) {
+        int p, q; cin >> p >> q;
+        adj[p].push_back(q);
+        adj[q].push_back(p);
+    }
+
+    cin >> S >> E;
+    cout << dfs(S) << endl;
+}
             </code>
         </pre>
-
     </div>
     
     <div class="list-none m-5 font-mono"> <!-- BFS -->
@@ -69,7 +119,7 @@
             Breadth First Search
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     #include&#60;queue&#62;
@@ -89,7 +139,7 @@
             Dijkstra
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     #include&#60;queue&#62;
@@ -107,8 +157,14 @@
         <p class="text-base m-4">
             Floyd Warshall Algorithm
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+            <p class="text-base m-2">
+                Given an undirected graph of size r and c, find the shortest path between two points in each given query of the q queries.
+                Input:<br>
+                &#11;&#11;r c<br>
+                &#11;&#11;A<sub>1, 1</sub> A<sub>1, 2</sub> ... <sub>1, </sub>
+            </p>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
@@ -126,7 +182,7 @@
             Bellman Ford Algorithm
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
@@ -144,7 +200,7 @@
             Dynamic Programming
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
@@ -162,7 +218,7 @@
             Segment Tree
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
@@ -180,7 +236,7 @@
 
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
@@ -203,33 +259,54 @@
                                  Find the kingdom with the most resources at the end.<br>
                                  Input:<br>
                                  &#11;&#11;N M<br>
-                                 &#11;&#11;A<sub>N</sub> A<sub>N-1</sub> A<sub>N-2</sub> ... A<sub>1</sub>
-                                 &#11;&#11;
+                                 &#11;&#11;A<sub>N</sub> A<sub>N-1</sub> A<sub>N-2</sub> ... A<sub>1</sub><br><br>
+                                 &#11;&#11;P<sub>1</sub> Q<sub>1</sub><br>
+                                 &#11;&#11;P<sub>2</sub> Q<sub>2</sub><br>
+                                 &#11;&#11;...<br>
+                                 &#11;&#11;P<sub>N</sub> Q<sub>N</sub><br>
             </p>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
-            <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    #include&#60;vector&#62;
-    using namespace std;
-    typedef pair&#60;int, int&#62; ii;
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
+            <code class="text-white m-0 p-0 border-0 font-mono font-[100%] align-baseline hljs xml">
+#include&#60;iostream&#62;
+#include&#60;vector&#62;
+using namespace std;
+typedef pair&#60;int, int&#62; ii;
 
-    #define fi first
-    #define se second
+#define fi first
+#define se second
 
-    vector&#60;int&#62; dsu; <span class="text-green-600">// resources, the kingdom it is under</span>
+vector&#60;int&#62; dsu; <span class="text-green-600">// resources, the kingdom it is under</span>
 
-    int main() {
-        int n, m; cin >> n >> m;
-        dsu.resize(n);
+int find(int n) {
+    if (dsu[n] == n) return n;
+    return dsu[n] = find(dsu[n]);
+}
 
-        for (int i = 0; i < n; i++) {
-            cin >> dsu[i].fi;
-            dsu[i].se = i;
-        }
-
-
+void merge(int x, int y) {
+    x = find(x); y = find(y);
+    if (x == y) return;
+    if (dsu[x].fi < dsu[y].fi) {
+        swap(x, y);
     }
+    dsu[x].fi += dsu[y].fi;
+    dsu[y].se = x;
+}
+
+int main() {
+    int n, m; cin >> n >> m;
+    dsu.resize(n);
+
+    for (int i = 0; i < n; i++) {
+        cin >> dsu[i].fi;
+        dsu[i].se = i;
+    }
+
+    for (int i = 0; i < m; i++) {
+        int a, b; cin >> a >> b;
+        merge(a, b);
+    }
+}
             </code>
         </pre>
     </div>
@@ -240,7 +317,7 @@
             Insertion Sort
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
@@ -254,11 +331,11 @@
 
     <div class="list-none m-5 font-mono"> <!-- Bubble Sort -->
         <h1 class="text-3xl font-medium uppercase" id="bubble-sort">Bubble Sort</h1>
-        <p class="text-base m-4"<pre class="syntax text-wrap z-[-1]">
+        <p class="text-base m-4"<pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
 
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
-        <pre class="syntax text-wrap z-[-1]">
+        <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
     #include&#60;iostream&#62;
     using namespace std;
