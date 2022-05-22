@@ -2,7 +2,7 @@
 
 {% block content %}
 {{ super() }}
-<main class="float-left mt-3 m-2 text-base">
+<main class="fullscreen float-left mt-3 m-2 text-base">
     <!-- Biography -->
     <div class = "float-left mr-4 max_sm:w-6/12"><img src="/static/dzuizz.jpg" alt="My Picture" width="320" class=""/></div>
     <p class="flex-wrap break-words text-stone-900 text-base">
@@ -16,13 +16,20 @@
     <br>
 
     <!--Github-->
-    <article class="flex-wrap break-words text-stone-900 text-base">
-        <b class="text-2xl">My Coding Profiles:</b><br>
+    <article class="flex-wrap break-words text-stone-900 text-base mb-2">
+        <b class="text-3xl text-red-800">My Coding Profiles</b><br>
         <b class="">Github</b>     → <a class="underline underline-offset-1 decoration-sky-500" href="https://github.com/dzuizz">github.com/dzuizz</a><br>
+        <img class="m-2 w-2/4 rounded" src="https://ghchart.rshah.org/dzuizz" alt="My Github Chart"/>
         <b class="">Codeforces</b> → <a class="underline underline-offset-1 decoration-sky-500" href="https://codeforces.com/profile/dzuizz">codeforces.com/profile/dzuizz</a><br>
         <b class="">Kattis</b>     → <a class="underline underline-offset-1 decoration-sky-500" href="https://open.kattis.com/users/dzuizz">open.kattis.com/users/dzuizz</a><br>
         <b class="">mrJudge</b>    → <a class="underline underline-offset-1 decoration-sky-500" href="https://dunjudge.me/users/dzuizz">dunjudge.me/users/dzuizz</a><br>
     </article>
+    <!-- <script src="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.rawgit.com/IonicaBizau/github-calendar/gh-pages/dist/github-calendar.css" />
+    <div class="calendar">
+        Loading the data just for you.
+    </div>
+    <script>new GitHubCalendar(".calendar", "dzuizz");</script> -->
     <br>
 
     <!-- Achievements -->

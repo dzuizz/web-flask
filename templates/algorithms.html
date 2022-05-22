@@ -15,12 +15,12 @@
         <p class="text-base m-4">
             Binary search is a search algorithm that finds the position of a target value within a sorted array.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="m-2 text-base">
-                Given a sorted array of size <b>N</b> and a target value <b>X</b>, find the location of <b>X</b> in the array.<br>
-                Input:<br>
-                &#11;&#11;N X<br>
-                &#11;&#11;A<sub>1</sub> A<sub>2</sub> ... A<sub>N</sub><br>
-            </p>
+            <pre class="m-2 text-base">
+Given a sorted array of size <b>N</b> and a target value <b>X</b>, find the location of <b>X</b> in the array.<br>
+Input:
+  N X
+  A<sub>1</sub> A<sub>2</sub> ... A<sub>N</sub>
+</pre>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
@@ -54,17 +54,17 @@ int main() {
         <p class="text-base m-4">
             Depth First Search is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="text-base m-4">
-                Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.<br>
-                Input:<br>
-                &#11;&#11;N M<br>
-                &#11;&#11;A B<br>
-                <br>
-                &#11;&#11;P<sub>1</sub> Q<sub>1</sub><br>
-                &#11;&#11;P<sub>2</sub> Q<sub>2</sub><br>
-                &#11;&#11;...<br>
-                &#11;&#11;P<sub>M</sub> Q<sub>M</sub><br>
-            </p>
+            <pre class="m-2 text-base">
+Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.
+Input:
+  N M
+  S E
+
+  P<sub>1</sub> Q<sub>1</sub>
+  P<sub>2</sub> Q<sub>2</sub>
+  ...
+  P<sub>M</sub> Q<sub>M</sub>
+</pre>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
@@ -116,39 +116,127 @@ int main() {
     <div class="list-none m-5 font-mono"> <!-- BFS -->
         <h1 class="text-3xl font-medium uppercase" id="breadth-first-search">Breadth First Search</h1>
         <p class="text-base m-4">
-            Breadth First Search
+            Breadth First Search, just like Depth First Search, is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+            <pre class="m-2 text-base">
+Given a graph of N nodes connected by M bidirectional edges which connect nodes P<sub class="italic">i</sub> and Q<sub class="italic">i</sub>, find the shortest path from node S to node E.
+Input:
+  N M
+  S E
+
+  P<sub>1</sub> Q<sub>1</sub>
+  P<sub>2</sub> Q<sub>2</sub>
+  ...
+  P<sub>M</sub> Q<sub>M</sub>
+</pre>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    #include&#60;queue&#62;
-    using namespace std;
+#include&#60;iostream&#62;
+#include&#60;queue&#62;
+using namespace std;
+typedef pair&#60;int, int&#62; ii;
 
-    int main() {
-        int rows, cols; cin >> row >> cols;
+#define fi node
+#define se dist
 
+int main() {
+    int n, m; cin >> n >> m;
+    int s, e; cin >> s >> e;
+
+    vector&#60;vector&#60;int&#62; &#62; adj;
+    vector&#60;bool&#62; visited;
+
+    for (int i = 0; i < n; i++) {
+        int p, q; cin >> p >> q;
+        adj[p].push_back(q);
+        adj[q].push_back(p);
     }
+
+    queue&#60;int&#62; q;
+    q.push_back(ii(s, 0));
+    visited[s] = 1;
+    while(!q.empty()) {
+        ii cur = q.top(); q.pop();
+        if (cur.node == e) {
+            cout << cur.dist << endl;
+            return 0;
+        }
+        for (int i = 0; i < adj[cur.node].size(); i++) {
+            int next = adj[cur.node][i];
+            if (!visited[next]) {
+                q.push_back(ii(next, cur.dist + 1));
+                visited[next] = 1;
+            }
+        }
+    }
+}
             </code>
         </pre>
     </div>
     
-    <div class="list-none m-5 font-mono"> <!-- Dijkstra -->
-        <h1 class="text-3xl font-medium uppercase" id="Dijkstra">Dijkstra</h1>
+    <div class="list-none m-5 font-mono" id="dijkstra"> <!-- Dijkstra -->
+        <h1 class="text-3xl font-medium uppercase" id="">Dijkstra</h1>
         <p class="text-base m-4">
             Dijkstra
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-        </p>
+            <pre class="m-2 text-base">
+Given a weighted graph of N nodes connected by M bidirectional edges with W<sub class="italic">i</sub> which connect nodes P<sub class="italic">i</sub> and Q<sub class="italic">i</sub>, find the shortest path from node S to node E.
+Input:
+  N M
+  P<sub>1</sub> Q<sub>1</sub> W<sub>1</sub>
+  P<sub>2</sub> Q<sub>2</sub> W<sub>2</sub>
+  ...
+  P<sub>M</sub> Q<sub>M</sub> W<sub>M</sub>
+</pre>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    #include&#60;queue&#62;
-    using namespace std;
+#include&#60;iostream&#62;
+#include&#60;vector&#62;
+#include&#60;queue&#62;
+using namespace std;
+typedef pair&#60;int, int&#62; ii;
 
-    int main() {
+#define fi node
+#define se dist
 
+vector&#60;vector&#60;ii&#62;&#62; adj;
+const int INF = 1e9;
+
+int main() {
+    int n, m; cin >> n >> m;
+
+    vector&#60;int&#62; distV(n);
+
+    for (int i = 0; i < n; i++) distV[i] = INF;
+    for (int i = 0; i < m; i++) {
+        int p, q, w; cin >> p >> q >> w;
+        adj[p].push_back(ii(q, w));
+        adj[q].push_back(ii(p, w));
     }
-            </code>
+
+    priority_queue&#60;ii&#62; q;
+    q.push_back(ii(-s, 0));
+
+    while(!q.empty()) {
+        ii cur = q.top(); q.pop();
+        int curNode = -cur.node;
+        int curDist = cur.dist;
+        if (curNode == e) {
+            cout << curDist << endl;
+            return 0;
+        }
+        for (int i = 0; i < adj[curNode].size(); i++) {
+            int next = adj[curNode][i].node;
+            int w = adj[curNode][i].dist;
+            if (curDist + w < dist[next]) {
+                dist[next] = cur.dist + w;
+                q.push_back(ii(-next, dist[next]));
+            }
+        }
+    }
+}
+</code>
         </pre>
     </div>
 

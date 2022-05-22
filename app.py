@@ -23,7 +23,7 @@ contests = {
 	'SIMOC': 'Singapore International Mathematics Olympiad Challenge',
 	'SIMOC Math Master Mind': 'Singapore International Mathematics Olympiad Challenge',
 	'SIMOC Math Olympiad': 'Singapore International Mathematics Olympiad Challenge',
-	'SIMOC Mind Sport': 'Singapore International Mathematics Olympiad Challenge',
+	'SIMOC Mind Sports': 'Singapore International Mathematics Olympiad Challenge',
 	'Singa Global Final': 'International Singapore Mathematics Competition',
 	'SMKC': 'Singapore Mathematical Kangaroo Contest',
 	'SMOPS by Hwa Chong Institution': 'Singapore Mathematical Olympiad for Primary Schools',
