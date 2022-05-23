@@ -20,5 +20,9 @@
   "homepage": "https://github.com/dzuizz/web-flask#readme",
   "devDependencies": {
     "tailwindcss": "^3.0.24"
+  },
+  "dependencies": {
+    "pupeteer": "^0.0.1",
+    "puppeteer": "^14.1.1"
   }
 }

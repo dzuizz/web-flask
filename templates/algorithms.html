@@ -12,11 +12,11 @@
     
     <div class="list-none m-5 font-mono"> <!-- Binary Search -->
         <h1 class="text-3xl font-medium uppercase" id="binary-search">Binary Search</h1>
-        <p class="text-base m-4">
+        <p class="flex-wrap text-base m-4">
             Binary search is a search algorithm that finds the position of a target value within a sorted array.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <pre class="m-2 text-base">
-Given a sorted array of size <b>N</b> and a target value <b>X</b>, find the location of <b>X</b> in the array.<br>
+            <p class="flex-wrap ml-2">Given a sorted array of size <b>N</b> and a target value <b>X</b>, find the location of <b>X</b> in the array.<br></p>
+            <pre class="m-2 mt-0 text-base">
 Input:
   N X
   A<sub>1</sub> A<sub>2</sub> ... A<sub>N</sub>
@@ -54,8 +54,8 @@ int main() {
         <p class="text-base m-4">
             Depth First Search is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <pre class="m-2 text-base">
-Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.
+            <p class="flex-wrap ml-2">Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
+            <pre class="m-2 mt-0 text-base">
 Input:
   N M
   S E
@@ -118,8 +118,8 @@ int main() {
         <p class="text-base m-4">
             Breadth First Search, just like Depth First Search, is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <pre class="m-2 text-base">
-Given a graph of N nodes connected by M bidirectional edges which connect nodes P<sub class="italic">i</sub> and Q<sub class="italic">i</sub>, find the shortest path from node S to node E.
+            <p class="flex-wrap ml-2">Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
+            <pre class="m-2 mt-0 text-base">
 Input:
   N M
   S E
@@ -175,15 +175,15 @@ int main() {
         </pre>
     </div>
     
-    <div class="list-none m-5 font-mono" id="dijkstra"> <!-- Dijkstra -->
-        <h1 class="text-3xl font-medium uppercase" id="">Dijkstra</h1>
+    <div class="list-none m-5 font-mono"> <!-- Dijkstra -->
+        <h1 class="text-3xl font-medium uppercase" id="dijkstra">Dijkstra</h1>
         <p class="text-base m-4">
             Dijkstra
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <pre class="m-2 text-base">
-Given a weighted graph of N nodes connected by M bidirectional edges with W<sub class="italic">i</sub> which connect nodes P<sub class="italic">i</sub> and Q<sub class="italic">i</sub>, find the shortest path from node S to node E.
+            <p class="flex-wrap ml-2">Given a weighted graph of <b>N</b> nodes connected by <b>E</b> bidirectional edges with <b>W<sub class="italic">i</sub></b> which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
+            <pre class="m-2 mt-0 text-base">
 Input:
-  N M
+  N E
   P<sub>1</sub> Q<sub>1</sub> W<sub>1</sub>
   P<sub>2</sub> Q<sub>2</sub> W<sub>2</sub>
   ...
@@ -204,12 +204,12 @@ vector&#60;vector&#60;ii&#62;&#62; adj;
 const int INF = 1e9;
 
 int main() {
-    int n, m; cin >> n >> m;
+    int n, e; cin >> n >> e;
 
     vector&#60;int&#62; distV(n);
 
     for (int i = 0; i < n; i++) distV[i] = INF;
-    for (int i = 0; i < m; i++) {
+    for (int i = 0; i < e; i++) {
         int p, q, w; cin >> p >> q >> w;
         adj[p].push_back(ii(q, w));
         adj[q].push_back(ii(p, w));
@@ -245,21 +245,28 @@ int main() {
         <p class="text-base m-4">
             Floyd Warshall Algorithm
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="text-base m-2">
-                Given an undirected graph of size r and c, find the shortest path between two points in each given query of the q queries.
-                Input:<br>
-                &#11;&#11;r c<br>
-                &#11;&#11;A<sub>1, 1</sub> A<sub>1, 2</sub> ... <sub>1, </sub>
-            </p>
+            <p class="flex-wrap ml-2">Given an weighted graph of <b>N</b> nodes and <b>E</b> bidirectional edges connecting nodes <b>A<sub>i</sub></b> and <b>B<sub>i</sub></b>, find the shortest path between two points in each given query of the <b>Q</b> queries.</p>
+            <pre class="m-2 mt-0 text-base">
+Input:
+  N E
+  
+  A<sub>1</sub> B<sub>1</sub>
+  A<sub>2</sub> B<sub>2</sub>
+  ...
+  A<sub>e</sub> B<sub>e</sub>
+</pre>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    using namespace std;
+#include&#60;iostream&#62;
+using namespace std;
 
-    int main() {
-        
-    }
+int dis[]
+
+int main() {
+    int n, e; cin >> n >> e;
+    
+}
             </code>
         </pre>
     </div>
@@ -341,18 +348,19 @@ int main() {
         <p class="text-base m-4">
             Disjoint Set Union
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="m-2 text-base">There are <b>n</b> kingdom. After every fight between two kingdom, the winner will take the defeated kingdom's resources<br>
-                                 In each fight, the kingdom with more resources will win.<br>
-                                 Given the number of kingdoms, their initial resources and the fights,<br>
-                                 Find the kingdom with the most resources at the end.<br>
-                                 Input:<br>
-                                 &#11;&#11;N M<br>
-                                 &#11;&#11;A<sub>N</sub> A<sub>N-1</sub> A<sub>N-2</sub> ... A<sub>1</sub><br><br>
-                                 &#11;&#11;P<sub>1</sub> Q<sub>1</sub><br>
-                                 &#11;&#11;P<sub>2</sub> Q<sub>2</sub><br>
-                                 &#11;&#11;...<br>
-                                 &#11;&#11;P<sub>N</sub> Q<sub>N</sub><br>
-            </p>
+            <pre class="m-2 text-base">
+There are <b>n</b> kingdom. After every fight between two kingdom, the winner will take the defeated kingdom's resources
+In each fight, the kingdom with more resources will win.
+Given the number of kingdoms, their initial resources and the fights,
+Find the kingdom with the most resources at the end.
+Input:
+  N M
+  A<sub>N</sub> A<sub>N-1</sub> A<sub>N-2</sub> ... A<sub>1</sub>
+  P<sub>1</sub> Q<sub>1</sub>
+  P<sub>2</sub> Q<sub>2</sub>
+  ...
+  P<sub>N</sub> Q<sub>N</sub>
+            </pre>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 border-0 font-mono font-[100%] align-baseline hljs xml">

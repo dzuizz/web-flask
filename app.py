@@ -1,8 +1,6 @@
-from flask import Flask, render_template, redirect, url_for
+from flask import Flask, render_template, redirect, request, url_for
 
 app = Flask(__name__)
-
-# ABCDEFGHIJKLMNOPQRSTUVWXYZ
 
 contests = {
 	'AMC': 'Australian Mathematics Olympiad',
@@ -120,18 +118,18 @@ achievements = [
 	}
 ]
 learnt_algorithms = [
-	{'name':'Floyd Warshall Algorithm', 'id':'floyd-warshall-algorithm'},
 	{'name':'Bellman Ford Algorithm', 'id':'bellman-ford-algorithm'},
-	{'name':'Minimum Spanning Tree', 'id':'minimum-spanning-tree'},
 	{'name':'Breadth First Search', 'id':'breadth-first-search'},
-	{'name':'Dynamic Programming', 'id':'dynamic-programming'},
-	{'name':'Disjoint Union Set', 'id':'disjoint-union-set'},
 	{'name':'Depth First Search', 'id':'depth-first-search'},
-	{'name':'Insertion Sort', 'id':'insertion-sort'},
 	{'name':'Binary Search', 'id':'binary-search'},
-	{'name':'Segment Tree', 'id':'segment-tree'},
 	{'name':'Bubble Sort', 'id':'bubble-sort'},
+	{'name':'Disjoint Union Set', 'id':'disjoint-union-set'},
 	{'name':'Dijkstra', 'id':'dijkstra'},
+	{'name':'Dynamic Programming', 'id':'dynamic-programming'},
+	{'name':'Floyd Warshall Algorithm', 'id':'floyd-warshall-algorithm'},
+	{'name':'Insertion Sort', 'id':'insertion-sort'},
+	{'name':'Minimum Spanning Tree', 'id':'minimum-spanning-tree'},
+	{'name':'Segment Tree', 'id':'segment-tree'},
 ]
 
 @app.route('/')
@@ -150,7 +148,9 @@ def family_page(name):
 		return render_template('dzinnun.html', title='Ahmad Dzinnun')
 	elif (name == 'aisyah'):
 		return render_template('aisyah.html', title='Aisyah Atqona Amalia')
-	return redirect('/family')
+	elif (name == 'dzuizz'):
+		return redirect('/')
+	return redirect('/family') 
 
 @app.route('/games')
 def games():

@@ -21,6 +21,10 @@
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/cb29bc5607.js" crossorigin="anonymous"></script>
     
+    <!-- Pyscript -->
+    <!-- <link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+    <script defer src="https://pyscript.net/alpha/pyscript.js"></script> -->
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-icons/3.0.1/iconfont/material-icons.min.css" integrity="sha256-x8PYmLKD83R9T/sYmJn1j3is/chhJdySyhet/JuHnfY=" crossorigin="anonymous" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
@@ -40,7 +44,7 @@
 </head>
 
 
-<body class="font-mono flex flex-wrap w-full m-0 bg-primary z-10">
+<body class="font-mono flex flex-wrap fullscreen m-0 bg-primary z-10">
     {% block content %}
         <nav class="sticky top-0 flex items-center bg-gray-800 p-3 flex-wrap w-full">
             <a href="/" class="p-2 mr-4 inline-flex items-center"> <!-- Logo -->

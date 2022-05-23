@@ -1,5 +1,10 @@
 {% extends 'layout.html' %}
 
+{% block head %}
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+{% endblock %}
+
 {% block content %}
 	<nav class="fixed top-0 left-0 h-screen w-16  m-0 flex flex-col bg-sidebar-900 text-white shadow-lg">
 		<a href="/"> <!-- Back -->
@@ -61,7 +66,7 @@
 			<button type="button" class="m-4 p-2 w-40 h-40 bg-blue-500 justify-items-stretch rounded max-sm:w-30" id="paper" onclick="move('paper')"><i class="fa-solid fa-hand fa-6x"></i></button>
 			<button type="button" class="m-4 p-2 w-40 h-40 bg-red-500 justify-items-stretch rounded max-sm:w-30" id="scissors" onclick="move('scissors')"><i class="fa-solid fa-hand-scissors fa-6x"></i></button>
 			<div class="mt-2">
-				<button type="button" class="m-4 p-2 bg-amber-500 rounded" onclick="round()" id="round-start">Start Round</button>
+				<button type="button" class="m-4 p-2 bg-amber-500 rounded" id="round-start">Start Round</button>
 			</div>
 			<b class="font-comfortaa" id="result">Try It!</b>
 		</div>
@@ -97,5 +102,5 @@
 			</div>
 		</div> -->
 	</main>
-	<script src="{{ url_for('static', filename='js/games.js') }}"></script>
+	<!-- <script src="{{ url_for('static', filename='js/games.js') }}"></script> -->
 {% endblock %}
