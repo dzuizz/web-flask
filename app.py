@@ -39,12 +39,12 @@ achievements = [
 	{
 		'year': '2022',
 		'grade': 'Primary 6',
-		'fulfilments': [
-			{'title': 'RIPMWC by Raffles Institution', 'award': 'DISTINCTION', 'ranking': 'Top 3% (97.45 percentile, Achievement Score 49%)', 'filename': '2022RIPMWC.pdf'},
-			{'title': 'Singa Global Final', 'award': 'GOLD', 'ranking': '', 'filename': '2022SINGA.pdf'},
-			{'title': 'BEBRAS', 'award': 'GOLD', 'ranking': '1st in Singapore', 'filename': '2022BEBRAS.pdf'},
-			{'title': 'SMKC', 'award': 'GOLD', 'ranking': '', 'filename': '2022SMKC.pdf'},
-			{'title': 'SASMO', 'award': 'GOLD', 'ranking': '', 'filename': ''},
+			'fulfilments': [
+					{'title': 'RIPMWC by Raffles Institution', 'award': 'DISTINCTION', 'ranking': 'Top 3% (97.45 percentile, Achievement Score 49%)', 'filename': '2022RIPMWC.pdf'},
+					{'title': 'Singa Global Final', 'award': 'GOLD', 'ranking': '', 'filename': '2022SINGA.pdf'},
+						{'title': 'BEBRAS', 'award': 'GOLD', 'ranking': '1st in Singapore', 'filename': '2022BEBRAS.pdf'},
+						{'title': 'SMKC', 'award': 'GOLD', 'ranking': '', 'filename': '2022SMKC.pdf'},
+						{'title': 'SASMO', 'award': 'GOLD', 'ranking': '', 'filename': ''},
 		]
 	},
 	{

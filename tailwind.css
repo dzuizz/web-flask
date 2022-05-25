@@ -1,29 +1,89 @@
-@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Quantico&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Comfortaa:wght@500&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quantico&display=swap");
 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-*, *::before, *::after {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body,
+ul,
+li {
+    margin: 0;
+    border: 0;
+    padding: 0;
+}
+
+canvas {
+    display: block;
+    width: 762;
+    margin: 0 auto;
+    background-color: blue;
+}
+
+p {
+    text-align: center;
+}
+
+body {
+    overflow: hidden;
+    height: 100%;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+.info {
+    position: absolute;
+    top: 0;
+    left: 0;
 }
 
 @layer base {
-    .font-quantico   {font-family: 'Quantico', sans-serif;}
-    .font-comfortaa  {font-family: 'Comfortaa', cursive;}
+    .font-quantico {
+        font-family: "Quantico", sans-serif;
+    }
+    .font-comfortaa {
+        font-family: "Comfortaa", cursive;
+    }
+    .code {
+        font-family: "Fira Code", monospace;
+    }
 }
 
 @layer components {
-    .circle          {@apply h-[25px];}
-    .syntax          {@apply relative p-0 leading-normal left-0 right-0 font-thin w-full whitespace-pre rounded border-solid border-y-[#ff7a59] bg-[#2d3e50] border-y-[.1875rem];}
-    .bg-primary      {@apply bg-gradient-to-br from-purple-100 to-pink-100 via-cyan-100;}
-    .fullscreen      {@apply w-full h-full;}
-    .family-link     {@apply border-2 mx-2 rounded focus:outline-none focus:ring duration-75;}
-    .sidebar-icon    {@apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto shadow-lg bg-sidebar-800 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;}
-    .sidebar-tooltip {@apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-sidebar-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;}
+    .circle {
+        @apply h-[25px];
+    }
+    .syntax {
+        @apply relative p-0 leading-normal left-0 right-0 font-thin w-full whitespace-pre rounded border-solid border-y-[#ff7a59] bg-[#2d3e50] border-y-[.1875rem];
+    }
+    .bg-primary {
+        @apply bg-gradient-to-br from-purple-100 to-pink-100 via-cyan-100;
+    }
+    .fullscreen {
+        @apply w-full h-full;
+    }
+    .family-link {
+        @apply border-2 mx-2 rounded focus:outline-none focus:ring duration-75;
+    }
+    .sidebar-icon {
+        @apply relative flex items-center justify-center h-12 w-12 mt-2 mb-2 mx-auto shadow-lg bg-sidebar-800 text-green-500 hover:bg-green-600 hover:text-white rounded-3xl hover:rounded-xl transition-all duration-300 ease-linear cursor-pointer;
+    }
+    .sidebar-tooltip {
+        @apply absolute w-auto p-2 m-2 min-w-max left-14 rounded-md shadow-md text-white bg-sidebar-900 text-xs font-bold transition-all duration-100 scale-0 origin-left;
+    }
     @media (min-width: 1024px) {
         .top-navbar {
             display: inline-flex !important;
@@ -32,5 +92,4 @@
 }
 
 @layer utilities {
-    .selected {@apply bg-green-500 text-white;}
 }

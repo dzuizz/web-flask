@@ -1,5 +1,5 @@
 // Rock Paper Scissors
-var randomGuess, userGuess, userScore = 0, computerScore = 0, scissors, paper, stone;
+var computer_move, user_move, userScore = 0, computerScore = 0;
 
 choices = {
 	"Rock": 1,
@@ -8,31 +8,40 @@ choices = {
 };
 
 function move(move) {
-	userGuess = move;
-	document.getElementById("rock").classList.remove("outline-4 scale-150");
-	document.getElementById("paper").classList.remove("outline-4 scale-150");
-	document.getElementById("scissors").classList.remove("outline-4 scale-150");
-	document.getElementById(move).classList.add("outline-4 scale-150");
+	user_move = move;
+	document.getElementById("rock").classList.remove('outline', 'scale-110', 'font-xl', 'decoration-indigo-900');
+	document.getElementById("paper").classList.remove('outline', 'scale-110', 'font-xl', 'decoration-indigo-900');
+	document.getElementById("scissors").classList.remove('outline', 'scale-110', 'font-xl', 'decoration-indigo-900');
+	document.getElementById(move).classList.add('outline', 'scale-110', 'font-xl', 'decoration-indigo-900');
 }
 
-function round() {
-	randomGuess = Math.floor(Math.random() * 3) + 1;
+function start_round() {
+	computer_move = Math.floor(Math.random() * 3) + 1;
 
-	if (userGuess === randomGuess) {
-		document.getElementById("result").innerHTML = "This is a draw.";
-	} else if (userGuess === "rock" && randomGuess === 2) {
-		document.getElementById("result").innerHTML = "You have won, scissors will cut paper up.";
-	} else if (userGuess === "paper" && randomGuess === 1) {
-		document.getElementById("result").innerHTML = "The computer has won, scissors will cut paper up.";
-	} else if (userGuess === "paper" && randomGuess === 3) {
-		document.getElementById("result").innerHTML = "You have won, paper will wrap up rocks.";
-	} else if (userGuess === "scissors" && randomGuess === 2) {
-		document.getElementById("result").innerHTML = "The computer has won, paper will wrap up rocks.";
-	} else if (userGuess === "scissors" && randomGuess === 1) {
-		document.getElementById("result").innerHTML = "You have won, rocks will break scissors.";
-	} else if (userGuess === "rock" && randomGuess === 3) {
-		document.getElementById("result").innerHTML = "The computer has won, rocks will break scissors.";
-	} else if (userGuess === "" && userGuess === null) {
-		document.getElementById("result").innerHTML = "You have not entered your choice.";
+	// * User vs Computer
+	if (user_move == "rock") {
+		if (computer_move == 1) { // * Rock vs Rock
+			document.getElementById("result-text").innerHTML = "It's a tie!";
+		} else if (computer_move == 2) { // * Rock vs Paper
+			document.getElementById("result-text").innerHTML = "The computer has won, paper will wrap rock up.";
+		} else { // * Rock vs Scissors
+			document.getElementById("result-text").innerHTML = "You have won, rock will break scissors";
+		}
+	} else if (computer_move == "paper") {
+		if (computer_move == 1) { // * Paper vs Rock
+			document.getElementById("result-text").innerHTML = "You have won, paper will wrap rock up.";
+		} else if (computer_move == 2) { // * Paper vs Paper
+			document.getElementById("result-text").innerHTML = "It's a tie!";
+		} else { // * Paper vs Scissors
+			document.getElementById("result-text").innerHTML = "The computer has won, scissors will cut paper.";
+		}
+	} else {
+		if (computer_move == 1) { // * Scissors vs Rock
+			document.getElementById("result-text").innerHTML = "The computer has won, rock will break scissors.";
+		} else if (computer_move == 2) { // * Scissors vs Paper
+			document.getElementById("result-text").innerHTML = "You have won, scissors will cut paper.";
+		} else { // * Scissors vs Scissors
+			document.getElementById("result-text").innerHTML = "It's a tie!";
+		}
 	}
 }

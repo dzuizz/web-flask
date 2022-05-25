@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-	<nav class="fixed top-0 left-0 h-screen w-16  m-0 flex flex-col bg-sidebar-900 text-white shadow-lg">
+	<nav class="fixed top-0 left-0 h-screen w-16 m-0 flex flex-col bg-sidebar-900 text-white shadow-lg">
 		<a href="/"> <!-- Back -->
 			<i class="sidebar-icon group">
 				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current">
@@ -52,7 +52,7 @@
 		</i>
 	</nav>
 	<main class="fullscreen ml-16 items-center justify-center">
-		<div class="mx-auto text-center mt-40 items-center font-comfortaa">
+		<div class="mx-auto text-center mt-20 items-center font-comfortaa">
 			<h1 class="text-5xl font-medium p-5" id="rock-paper-scissors">Rock Paper Scissors</h1>
 			<article class="text-base">
 				<p class="m-4">
@@ -62,13 +62,13 @@
 				</p>
 				<p>Rocks break scissors, scissors cut paper, and paper covers rock.<br></p>
 			</article>
-			<button type="button" class="m-4 p-2 w-40 h-40 bg-green-500 justify-items-stretch rounded max-sm:w-30" id="rock" onclick="move('rock')"><i class="fa-solid fa-hand-back-fist fa-6x"></i></button>
-			<button type="button" class="m-4 p-2 w-40 h-40 bg-blue-500 justify-items-stretch rounded max-sm:w-30" id="paper" onclick="move('paper')"><i class="fa-solid fa-hand fa-6x"></i></button>
-			<button type="button" class="m-4 p-2 w-40 h-40 bg-red-500 justify-items-stretch rounded max-sm:w-30" id="scissors" onclick="move('scissors')"><i class="fa-solid fa-hand-scissors fa-6x"></i></button>
+			<button type="button" class="m-4 p-2 w-40 h-40 bg-green-500 justify-items-stretch rounded max-sm:w-30 transition-all ease-in duration-300 scale-100 opacity-1" id="rock" onclick="move('rock')" pys-onClick="move(1)"><i class="fa-solid fa-hand-back-fist fa-6x"></i></button>
+			<button type="button" class="m-4 p-2 w-40 h-40 bg-blue-500 justify-items-stretch rounded max-sm:w-30 transition-all ease-in duration-300 scale-100 opacity-1" id="paper" onclick="move('paper')" pys-onClick="move(2)"><i class="fa-solid fa-hand fa-6x"></i></button>
+			<button type="button" class="m-4 p-2 w-40 h-40 bg-red-500 justify-items-stretch rounded max-sm:w-30 transition-all ease-in duration-300 scale-100 opacity-1" id="scissors" onclick="move('scissors')" pys-onClick="move(3)"><i class="fa-solid fa-hand-scissors fa-6x"></i></button>
 			<div class="mt-2">
-				<button type="button" class="m-4 p-2 bg-amber-500 rounded" id="round-start">Start Round</button>
+				<button type="button" class="m-4 p-2 bg-amber-500 rounded" onclick="start_round()" id="round-start">Start Round</button>
 			</div>
-			<b class="font-comfortaa" id="result">Try It!</b>
+			<b class="font-comfortaa" id="result-text">Try It!</b>
 		</div>
 		<div class="mx-auto text-center mt-20 items-center font-comfortaa">
 			<h1 class="text-5xl font-medium p-5" id="tic-tac-toe">Tic Tac Toe</h1>
@@ -83,6 +83,7 @@
 				<span class="w-20 h-20 text-center p-6 bg-sky-500 rounded">-</span>
 				<span class="w-20 h-20 text-center p-6 bg-sky-500 rounded">-</span>
 			</div>
+		</div>
 		</div>
 		<!-- <div class="mx-auto text-center mt-40 items-center">
 			<h1 class="text-3xl">Rock Paper Scissors</h1>
@@ -102,5 +103,5 @@
 			</div>
 		</div> -->
 	</main>
-	<!-- <script src="{{ url_for('static', filename='js/games.js') }}"></script> -->
+	<script src="{{ url_for('static', filename='js/games.js') }}"></script>
 {% endblock %}
