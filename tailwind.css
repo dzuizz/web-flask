@@ -27,6 +27,9 @@
 }
 
 @layer components {
+    sub {
+        @apply italic;
+    }
     .circle {
         @apply h-[25px];
     }

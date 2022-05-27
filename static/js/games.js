@@ -29,7 +29,7 @@ function start_round() {
 			document.getElementById("result-text").innerHTML = "You have won, rock will break scissors";
 			user_score++;
 		}
-	} else if (computer_move == "paper") {
+	} else if (user_move == "paper") {
 		if (computer_move == 1) { // * Paper vs Rock
 			document.getElementById("result-text").innerHTML = "You have won, paper will wrap rock up.";
 			user_score++;

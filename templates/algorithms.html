@@ -54,7 +54,7 @@ int main() {
         <p class="text-base m-4">
             Depth First Search is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.<br>
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="flex-wrap ml-2">Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
+            <p class="flex-wrap ml-2">Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="">i</sub></b> and <b>Q<sub class="">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
             <pre class="m-2 mt-0 text-base">
 Input:
   N M
@@ -118,7 +118,7 @@ int main() {
         <p class="text-base m-4">
             Breadth First Search, just like Depth First Search, is a graph traversal algorithm that finds the shortest path from one point to another in an unweighted graph.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="flex-wrap ml-2">Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
+            <p class="flex-wrap ml-2">Given a graph of <b>N</b> nodes connected by <b>M</b> bidirectional edges which connect nodes <b>P<sub class="">i</sub></b> and <b>Q<sub class="">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
             <pre class="m-2 mt-0 text-base">
 Input:
   N M
@@ -180,7 +180,7 @@ int main() {
         <p class="text-base m-4">
             Dijkstra
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
-            <p class="flex-wrap ml-2">Given a weighted graph of <b>N</b> nodes connected by <b>E</b> bidirectional edges with <b>W<sub class="italic">i</sub></b> which connect nodes <b>P<sub class="italic">i</sub></b> and <b>Q<sub class="italic">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
+            <p class="flex-wrap ml-2">Given a weighted graph of <b>N</b> nodes connected by <b>E</b> bidirectional edges with <b>W<sub class="">i</sub></b> which connect nodes <b>P<sub class="">i</sub></b> and <b>Q<sub class="">i</sub></b>, find the shortest path from node <b>S</b> to node <b>E</b>.</p>
             <pre class="m-2 mt-0 text-base">
 Input:
   N E
@@ -259,6 +259,7 @@ Input:
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
 #include&#60;iostream&#62;
+#include&#60;vector&#62;
 using namespace std;
 
 int dis[]
@@ -307,20 +308,81 @@ int main() {
         </pre>
     </div>
 
-    <div class="list-none m-5 font-mono"> <!-- Segment Tree -->
-        <h1 class="text-3xl font-medium uppercase" id="segment-tree">Segment Tree</h1>
+    <div class="list-none m-5 font-mono" id="segment-tree"> <!-- Segment Tree -->
+        <h1 class="text-3xl font-medium uppercase">Segment Tree</h1>
         <p class="text-base m-4">
-            Segment Tree
+            Segment Tree is a data structure that answers queries of a range efficiently, while being able to be modified.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
+            <p class="flex-wrap ml-2">
+                Given the array <b>A</b> with <b>N</b> elements find the sum of all elements from <b>A<sub class=""><sub class="">i</sub></sub></b> to <b>A<sub class="">j</sub></b>.<br>
+                Each query consists of 3 integers.<br>
+                if the first integer is 1, the query will continue with <b>i</b> and <b>j</b>. Print the sum of all elements from A<sub>i</sub> to A<sub>j</sub>.<br>
+                if the first integer is 2, the query will continue with <b>U</b> and <b>X</b>. Replace the element at <b>A<sub class="">U</sub></b> with <b>X</b>
+            </p>
+            <pre class="m-2 mt-0 text-base">
+Input:
+  N Q
+  A<sub>1</sub> A<sub>2</sub> ... A<sub>N</sub>
+
+  Queries of either type at an arbitrary order.
+  1 i j or
+  2 U X
+</pre>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
             <code class="text-white m-0 p-0 font-mono border-0 font-[100%] align-baseline hljs xml">
-    #include&#60;iostream&#62;
-    using namespace std;
+#include&#60;iostream&#62;
+#include&#60;vector&#62;
+using namespace std;
 
-    int main() {
+vector&#60;int&#62; segTree, a;
 
+void build(int idx, int l, int r) {
+    if (l == r) {
+        return segTree[idx] = a[l]; <span class="text-green-600">// or a[r]</span>
     }
+    int mid = (l + r) / 2;
+
+    build(2 * idx, l, mid);
+    build(2 * idx + 1, mid + 1, r);
+
+    segTree[idx] = segTree[2 * idx] + segTree[2 * idx + 1];
+}
+
+void update(int idx, int l, int r, int u, int x) {
+    if (l == r) {
+        segTree[idx] = x;
+        return;
+    }
+    int mid = (l + r) / 2;
+
+    if (x <= mid) update(2 * idx, l, mid, u, x);
+    else update(2 * idx + 1, mid + 1, r, u, x);
+
+    segTree[idx] = segTree[2 * idx] + segTree[2 * idx + 1];
+}
+
+int query(int idx, int l, int r, int x, int y) {
+    if (l <= x && y <= r) {
+        return segTree[idx];
+    } else if (y <= l || x >= r) {
+        return 0;
+    }
+    int mid = (l + r) / 2;
+
+    return query(2 * idx, l, mid, x, y) + query(2 * idx + 1, mid + 1, r, x, y);
+}
+
+int main() {
+    int n, q; cin >> n >> q;
+
+    for (int i = 0; i < n; i++) cin >> a[i];
+
+    segTree = vector&#60;int&#62;(n);
+
+    build(1, 0, n-1);
+    
+}
             </code>
         </pre>
     </div>
