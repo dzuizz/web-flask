@@ -1,0 +1,33 @@
+{% extends 'family_template.html' %}
+
+{% block head %}
+<link rel="stylesheet" href="https://pyscript.net/alpha/pyscript.css" />
+<script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+{% endblock %}
+
+{% block content %}
+{{ super() }}
+
+<main class="">
+    <div class="flex flex-nonwrap">
+        <div class="m-2 mt-4"><img src=""></div>
+        <article class="font-comfortaa place-self-center">
+            <h1 class="text-7xl">Ahmad Zarruq</h1>
+            <p class="mt-2">
+                Hello! I am Ahmad Zarruq.<br>
+                I am the fourth child of my family and the third son of the family.<br>
+                I am currently <span id="month"></span> months old.<br>
+            </p>
+            <py-script>
+                import datetime as dt
+
+                birth_date = dt.datetime(2021, 12, 20)
+                end_date = dt.date.today()
+
+                months = (end_date.year - birth_date.year) * 12 + end_date.month - birth_date.month
+                pyscript.write('month', months)
+            </py-script>
+        </article>
+    </div>
+</main>
+{% endblock %}

@@ -7,8 +7,8 @@ contests = {
 	'AMO': 'American Mathematics Olympiad',
 	'BEBRAS': 'International Challenge on Informatics and Computational Thinking',
 	'DOKA': 'Depth Of Knowledge Assesment',
-	'DrCT': 'Doctor Of Computational Thinking',
-	'DrCT Global Finals': 'Doctor Of Computational Thinking',
+	'DrCT': 'Design Thinking with Robotics and Computational Thinking International Competition',
+	'DrCT Global Finals': 'Design Thinking with Robotics and Computational Thinking International Competition',
 	'ICAS Science': 'A Science Contest',
 	'IJMO': 'International Junior Mathematical Olympiad',
 	'iOS App Development with Swift Essential': 'InfoTech',
@@ -40,11 +40,12 @@ achievements = [
 		'year': '2022',
 		'grade': 'Primary 6',
 			'fulfilments': [
-					{'title': 'RIPMWC by Raffles Institution', 'award': 'DISTINCTION', 'ranking': 'Top 3% (97.45 percentile, Achievement Score 49%)', 'filename': '2022RIPMWC.pdf'},
-					{'title': 'Singa Global Final', 'award': 'GOLD', 'ranking': '', 'filename': '2022SINGA.pdf'},
-						{'title': 'BEBRAS', 'award': 'GOLD', 'ranking': '1st in Singapore', 'filename': '2022BEBRAS.pdf'},
-						{'title': 'SMKC', 'award': 'GOLD', 'ranking': '', 'filename': '2022SMKC.pdf'},
-						{'title': 'SASMO', 'award': 'GOLD', 'ranking': '', 'filename': ''},
+				{'title': 'RIPMWC by Raffles Institution', 'award': 'DISTINCTION', 'ranking': 'Top 3% (97.45 percentile, Achievement Score 49%)', 'filename': '2022RIPMWC.pdf'},
+				{'title': 'Singa Global Final', 'award': 'GOLD', 'ranking': '', 'filename': '2022SINGA.pdf'},
+				{'title': 'BEBRAS', 'award': 'GOLD', 'ranking': '1st in Singapore', 'filename': '2022BEBRAS.pdf'},
+				{'title': 'SMKC', 'award': 'GOLD', 'ranking': '', 'filename': '2022SMKC.pdf'},
+				{'title': 'SASMO', 'award': 'GOLD', 'ranking': '', 'filename': ''},
+				{'title': 'DrCT', 'award': 'SILVER', 'ranking': '', 'filename': ''},
 		]
 	},
 	{
@@ -148,6 +149,8 @@ def family_page(name):
 		return render_template('dzinnun.html', title='Ahmad Dzinnun')
 	elif (name == 'aisyah'):
 		return render_template('aisyah.html', title='Aisyah Atqona Amalia')
+	elif (name == 'zarruq'):
+		return render_template('zarruq.html', title='Zarruq')
 	elif (name == 'dzuizz'):
 		return redirect('/')
 	return redirect('/family') 
