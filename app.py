@@ -161,4 +161,4 @@ def algorithms():
 	return render_template('algorithms.html', title='Algorithms', learnt_algorithms=learnt_algorithms)
 
 if __name__ == "__main__":
-  	app.run(debug=True, host='0.0.0.0', port=9090)
+  	app.run(host='0.0.0.0', port=9090)
