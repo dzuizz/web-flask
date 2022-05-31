@@ -4,7 +4,7 @@
 {{ super() }}
 <main class="fullscreen float-left mt-3 m-2 text-base">
     <!-- Biography -->
-    <div class = "float-left mr-4 max_sm:w-6/12"><img src="/static/dzuizz.jpg" alt="My Picture" width="320" class=""/></div>
+    <div class = "float-left mr-4 max_sm:w-6/12"><img src="{{ url_for('static', filename='dzuizz.jpg') }}" alt="My Picture" width="320" class=""/></div>
     <p class="flex-wrap break-words text-stone-900 text-base">
         My name is Ahmad Dzuizz Annajib.<br>
         I am an Indonesian boy living in Singapore.<br>
