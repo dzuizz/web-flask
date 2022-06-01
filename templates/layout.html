@@ -47,7 +47,6 @@
     {% endif %}
 </head>
 
-
 <body class="font-mono flex flex-wrap fullscreen m-0 bg-primary z-10">
     {% block content %}
         <nav class="sticky top-0 flex items-center bg-gray-800 p-3 flex-wrap w-full">
@@ -59,12 +58,42 @@
                     Dzuizz.com
                 </span>
             </a>
-            <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler" data-target = "#navigation">
+            <!-- <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler">
+                <i class="material-icons">menu</i>
+            </button> -->
+            <div class="w-full sm:inline-flex sm:flex-grow sm:w-auto">
+                <div class="sm:inline-flex sm:flex-row sm:ml-auto sm:w-auto w-full sm:items-center items-start flex sm:h-auto">
+                    <a href="/" class="sm:inline-flex sm:w-auto w-full px-3 py-2 text-center rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>Home</span>
+                    </a>
+                    <a href="/games" class="sm:inline-flex sm:w-auto w-full px-3 py-2 text-center rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>Games</span>
+                    </a>
+                    <a href="/family" class="sm:inline-flex sm:w-auto w-full px-3 py-2 text-center rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>My Family</span>
+                    </a>
+                    <a href="/algorithms" class="sm:inline-flex sm:w-auto w-full px-3 py-2 text-center rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span>Algorithms</span>
+                    </a>
+                </div>
+            </div>
+        </nav>
+        <!-- <nav class="sticky top-0 flex items-center bg-gray-800 p-3 flex-wrap w-full">
+            <a href="/" class="p-2 mr-4 inline-flex items-center"> Logo -->
+                <!-- <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="fill-current text-white h-8 w-8 mr-2">
+                    <path d="M24 10.935v2.131l-8 3.947v-2.23l5.64-2.783-5.64-2.79v-2.223l8 3.948zm-16 3.848l-5.64-2.783 5.64-2.79v-2.223l-8 3.948v2.131l8 3.947v-2.23zm7.047-10.783h-2.078l-4.011 16h2.073l4.016-16z"/>
+                </svg>
+                <span class="text-xl text-white font-bold uppercase tracking-wide">
+                    Dzuizz.com
+                </span>
+            </a>
+            <button class="text-white inline-flex p-3 hover:bg-gray-900 rounded lg:hidden ml-auto hover:text-white outline-none nav-toggler">
                 <i class="material-icons">menu</i>
             </button>
-            <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto" id="navigation">
+            <div class="hidden top-navbar w-full lg:inline-flex lg:flex-grow lg:w-auto">
                 <div class="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-start flex flex-col lg:h-auto">
-                    <a href="/" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                    <a href="/" class=" g:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
+                        <span class="block sm:hidden"><i class="sm:block fa-solid fa-house"></i></span>
                         <span>Home</span>
                     </a>
                     <a href="/games" class="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-gray-400 items-center justify-center hover:bg-gray-900 hover:text-white">
@@ -78,7 +107,7 @@
                     </a>
                 </div>
             </div>
-        </nav>
+        </nav> -->
     {% endblock %}
 
     <!--Bootstrap JS & Popper-->
@@ -88,5 +117,5 @@
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
     <script src="static/js/jquery.min.js"></script>
-    <script src="static/js/script.js"></script>
+    <!-- <script src="static/js/script.js"></script> -->
 </body>
