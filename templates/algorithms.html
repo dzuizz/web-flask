@@ -275,7 +275,7 @@ int main() {
     <div class="list-none m-5 font-mono"> <!-- Bellman Ford -->
         <h1 class="text-3xl font-medium uppercase" id="bellman-ford-algorithm">Bellman Ford Algorithm</h1>
         <p class="text-base m-4">
-            Bellman Ford Algorithm
+            The Bellman Ford Algorithm is an algorithm that finds if there is a negative cycle in a graph.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
@@ -293,7 +293,7 @@ int main() {
     <div class="list-none m-5 font-mono"> <!-- Dynamic Programming -->
         <h1 class="text-3xl font-medium uppercase" id="dynamic-programming">Dynamic Programming</h1>
         <p class="text-base m-4">
-            Dynamic Programming
+            Dynamic Programming is a method of solving a problem by breaking it down into subproblems and using the results of those subproblems to solve the original problem.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">
@@ -308,8 +308,8 @@ int main() {
         </pre>
     </div>
 
-    <div class="list-none m-5 font-mono" id="segment-tree"> <!-- Segment Tree -->
-        <h1 class="text-3xl font-medium uppercase">Segment Tree</h1>
+    <div class="list-none m-5 font-mono"> <!-- Segment Tree -->
+        <h1 class="text-3xl font-medium uppercase" id="segment-tree">Segment Tree</h1>
         <p class="text-base m-4">
             Segment Tree is a data structure that answers queries of a range efficiently, while being able to be modified.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
@@ -382,6 +382,15 @@ int main() {
 
     build(1, 0, n-1);
     
+    for (int i = 0; i < q; i++) {
+        int type, x, y; cin >> type >> x >> y;
+
+        if (type == 1) {
+            cout &#60;&#60; query(1, 0, n-1, x, y);
+        } else {
+            update(1, 0, n-1, x, y);
+        }
+    }
 }
             </code>
         </pre>
@@ -390,7 +399,7 @@ int main() {
     <div class="list-none m-5 font-mono"> <!-- Minimum Spanning Tree -->
         <h1 class="text-3xl font-medium uppercase" id="minimum-spanning-tree">Minimum Spanning Tree</h1>
         <p class="text-base m-4">
-
+            Minimum Spanning Tree is a data structure that finds the least sum of weights of edges of a weighted graph in order to achieve a goal.
             <h3 class="text-3xl ml-2 mb-2 font-comfortaa">Here is an example.</h3>
         </p>
         <pre class="syntax text-wrap z-[-1] whitespace-pre-wrap pl-8">

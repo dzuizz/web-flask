@@ -10,11 +10,14 @@
             <h1 class="text-7xl">Ahmad Dzinnun</h1>
             <p class="mt-2">
                 Hello! I am Ahmad Dzinnun.<br>
-                I am the second child of my family and the second son of the family.<br>
-                I am currently Grade 4 in <a href="https://irsyad.sg/"><b class="text-sky-500">Madrasah Irsyad Zuhri Al-Islamiah</b></a>.<br>
-                I love saying SIUUU!
+                I am the second child and son of my family.<br>
+                I am currently Grade 4 in <a class="underline decoration-sky-500" href="https://irsyad.sg/"><b class="text-sky-500">Madrasah Irsyad Zuhri Al-Islamiah</b></a>.<br>
+                I love playing with Lego and saying SIUUU!<br>
             </p>
+            <button class="flex-wrap break-words rounded bg-amber-500 p-2 mt-5" id="sheesh">You are advised to not press this button</button>
+            <h1 class="flex break-words text-2xl mt-5 font-bold" id="sheesh-text"></h1>
         </article>
     </div>
+    <script src="{{ url_for('static', filename='js/sheesh.js') }}"></script>
 </main>
 {% endblock %}
