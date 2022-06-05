@@ -1,5 +1,6 @@
-let button = document.getElementById("sheesh");
-let h1 = document.getElementById("sheesh-text");
+let button = document.getElementById("button");
+let sheesh = document.getElementById("sheesh");
+let bruh = document.getElementById("bruh");
 
 let count = 0;
 
@@ -8,8 +9,7 @@ button.addEventListener('click', function () {
     else if (count == 1) {
         button.innerHTML = "You have been warned...";
         for (let i = 1; i <= 20; i++) {
-            h1.innerHTML += "SIUUUU! ";
-            if (!(i%2)) h1.innerHTML += "<br>";
+            bruh.innerHTML = "<img src='/static/bruh.jpeg'></img>";
         }
     }
     count++;
